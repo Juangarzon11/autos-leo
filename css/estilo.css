@@ -6,8 +6,110 @@
 body {
     font-size: 1.2rem;
     font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 700;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 900;
+}
+
+/* Utilidades */
+
+.btn-invi {
+    background-color: rgba(0, 0, 0, 0);
+    color: #FD0404;
+    border: none;
+    font-size: 1.3rem;
+    border-radius: 0.5rem;
+}
+
+
+
+
+
+/* Index */
+
+.navbar {
+    padding: 1rem;
+}
+
+
 .bg-nav {
-    background-color:;
+    background-color: #ffffff;
+}
+
+
+
+nav a {
+    color: #FD0404 !important;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #1A1A1A !important;
+}
+
+
+
+.bg-ind {
+    background-image: url(../img/bg-01.jpg);
+    height: 750px;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.dropdown-toggle {
+    font-weight: 700;
+}
+
+
+.dropdown-toggle:hover {
+    color: #1A1A1A;
+}
+
+.dropdown-item{
+    color: #FD0404;
+}
+
+.dropdown-item:hover {
+    background-color: #1A1A1A !important;
+    color: #ffffff;
+}
+
+
+
+
+
+
+/* Footer */
+
+.footer {
+    padding: 2rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+    background-color: #1A1A1A;
+}
+
+.contac a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contac a:hover {
+    color: #FD0404;
+    text-decoration: none;
+}
+
+.redes i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.redes i:hover {
+    color: #FD0404;
+    font-size: 1.8rem;
 }
