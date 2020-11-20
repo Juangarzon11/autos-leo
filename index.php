@@ -51,6 +51,8 @@
                             <button class="dropdown-item" type="button">Mi Perfil</button>
                             <button class="dropdown-item" type="button">Mi Vehículo</button>
                             <button class="dropdown-item" type="button">Reservas</button>
+                            <a href="vistas/Usuario/form_cliente.php"><button class="dropdown-item" type="button">(Cliente)</button></a>
+                            <a href="vistas/proveedor/form_proveedor.php"><button class="dropdown-item" type="button">(Proveedor)</button></a>
                             <div class="dropdown-divider"></div>
                             <button class="dropdown-item" type="button">Cerrar Sesión</button>
                         </div>
