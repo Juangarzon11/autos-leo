@@ -1,5 +1,9 @@
+<?php
+ include "../../conexion.php";
+
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -61,51 +65,91 @@
             </div>
         </nav>
     </section>
-        <div class="container formularios col-9">
-            <div class="text-center mb-3">
-                <h2>Proveedor</h2>
-            </div>
+        <div class="container mt-3">
+            
         <form action="guardar_proveedor.php" name="add_form" method="POST" class="col-12">
-        <div class="form-group">
-            <label>RUT</label>
-            <input type="text" class="form-control" name="rut" id="rut" placeholder="RUT">
-        </div>
-        <div class="form-group">
-            <label>Nombre</label>
-            <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre">
-        </div>
-        <div class="form-group">
-            <label>Celular</label>
-            <input type="text" class="form-control" name="celular" id="celular" placeholder="Número de celular">
-        </div>
-        <div class="form-group">
-            <label>Teléfono</label>
-            <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Número telefónico">
-        </div>
-        <div class="form-group">
-            <label>Correo</label>
-            <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo elctrónico">
-        </div>
-        <div class="form-group">
-            <label>Dirección</label>
-            <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+
+        <div class="text-center mb-3">
+            <h2>Proveedor</h2>
         </div>
 
-        <div class="form-group row">
-            <div class="col">
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>RUT</label>
+                <input type="text" class="form-control" name="rut" id="rut" placeholder="RUT">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Nombre</label>
+                <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Descripción</label>
+                <textarea name="descripcion" id="descripcion" cols="30" rows="7" class="form-control" placeholder="Descripción de la empresa..."></textarea>
+            </div>
+        </div>
+
+        
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Teléfono</label>
+                <input type="text" class="form-control" name="telefono" id="telefono" placeholder="Número telefónico">
+            </div>
+        </div>
+        
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Correo</label>
+                <input type="email" class="form-control" name="correo" id="correo" placeholder="Correo elctrónico">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Dirección</label>
+                <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Dirección">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 form-group">
+                <label>Servicio</label>
+                <select name="servicio" id="servicio" class="form-control">
+                <option value="0">-Seleccione el servicio-</option>
+                    <?php 
+                    $sel = $conn ->query("SELECT * FROM tblservicios_ofertados");
+                                
+                    while ($row=$sel->fetch_array()) {
+                    ?>
+                    <option value="<?php echo $row[0] ?>"> <?php echo $row[1] ?></option>
+                    <?php	
+                    }
+                    ?>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="col-12 col-sm-6 form-group">
                 <label>Contraseña</label>
                 <input type="password" class="form-control" name="contra1" placeholder="Contraseña" id="con1">
             </div>
-            <div class="col">
+            <div class="col-12 col-sm-6 form-group">
                 <label>Confirmar Contraseña</label>
                 <input type="password" class="form-control" name="contra2" placeholder="Confirmar contraseña" id="con2">
-            </div>
-            <span id="error2"></span>
+            </div> 
+            <div class="col-12 text-center"><span id="error2"></span></div>
         </div>
 
         <div class="text-center">
         <button type="button" class="btn btn-color">Registrar</button>
         </div>
+        
         </form>
 
         </div>

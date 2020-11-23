@@ -74,50 +74,65 @@ include '../../conexion.php';
                     <h2>Regístrate</h2>
                 </div>
 
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" class="form-control" name="nombres" placeholder="Ingrese los nombres" id="nombre">
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Nombre</label>
+                        <input type="text" class="form-control" name="nombres" placeholder="Ingrese los nombres" id="nombre">
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label>Apellidos</label>
-                    <input type="text" class="form-control" name="apellidos" placeholder="Ingrese los apellidos" id="apellido">
-                </div>
-
-                <div class="form-group">
-                    <label>Número De Cédula</label>
-                    <input type="text" class="form-control" name="identificacion" placeholder="Cédula ciudadanía" id="cedula">
-                </div>
-
-                <div class="form-group">
-                    <label>Celular</label>
-                    <input type="text" class="form-control" name="celular" placeholder="Número de celular" id="celular">
+                
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Apellidos</label>
+                        <input type="text" class="form-control" name="apellidos" placeholder="Ingrese los apellidos" id="apellido">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Ciudad de residencia</label>
-                    <input type="text" class="form-control" name="ciudad" placeholder="Ciudad de residencia" id="ciudad">
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Número De Cédula</label>
+                        <input type="text" class="form-control" name="identificacion" placeholder="Cédula ciudadanía" id="cedula">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Dirección</label>
-                    <input type="text" class="form-control" name="direccion" placeholder="Dirección de residencia" id="direccion">
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Celular</label>
+                        <input type="text" class="form-control" name="celular" placeholder="Número de celular" id="celular">
+                    </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Correo</label>
-                    <input type="email" class="form-control" name="correo" placeholder="Correo electrónico" id="correo">
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Ciudad de residencia</label>
+                        <input type="text" class="form-control" name="ciudad" placeholder="Ciudad de residencia" id="ciudad">
+                    </div>
                 </div>
 
-                <div class="form-group row">
-                    <div class="col">
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Dirección</label>
+                        <input type="text" class="form-control" name="direccion" placeholder="Dirección de residencia" id="direccion">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-12 form-group">
+                        <label>Correo</label>
+                        <input type="email" class="form-control" name="correo" placeholder="Correo electrónico" id="correo">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="col-6 form-group">
                         <label>Contraseña</label>
                         <input type="password" class="form-control" name="contra1" placeholder="Contraseña" id="con1">
                     </div>
-                    <div class="col">
+                    <div class="col-6 form-group">
                         <label>Confirmar Contraseña</label>
                         <input type="password" class="form-control" name="contra2" placeholder="Confirmar contraseña" id="con2">
                     </div>
-                    <span id="error2"></span>
+                    <div class="col-12 text-center"><span id="error2"></span></div>
                 </div>
 
                 <div class="text-center mb-3">
