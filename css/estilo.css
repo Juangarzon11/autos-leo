@@ -94,9 +94,24 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* Tarjetas conocenos */
 
+.tar-img {
+    padding: 3rem 3rem 1rem 3rem;
+}
 
+.tarjetas h3 {
+    font-weight: 900;
+    text-align: center;
+    color: #1A1A1A;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
 
+.tarjetas p {
+    text-align: justify;
+    font-size: 0.8;
+}
 
 
 /* Footer */
