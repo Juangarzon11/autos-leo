@@ -25,7 +25,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-nav">
             <div class="col-sm-3 text-center">
                 <a class="navbar-brand" href="index.php">
-                    <img src="img/logo-color.png" alt="">
+                    <img src="img/logo-color.png" alt="" style="width: 80%;">
                 </a>
             </div>
 
@@ -41,7 +41,7 @@
                         <a class="nav-link" href="#">¿Quienes somos?</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Productos</a>
+                        <a class="nav-link" href="vistas/productos.php">Productos</a>
                     </li>
                     <div class="btn-group">
                         <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
@@ -80,7 +80,7 @@ Pellentesque facilisis viverra dui, quis egestas dolor tristique sed. Pellentesq
                 </div>
                 <div class="col-lg-6 text-lg-center text-center">
                     <a class="navbar-brand" href="index.php">
-                        <img src="img/logo-blan.png" alt="">
+                        <img src="img/logo-blan.png" alt="" style="width: 60%;">
                     </a>
                 </div>
                 <div class="col-lg-3 my-3 my-lg-0 text-lg-center text-center">
