@@ -1,20 +1,21 @@
 <?php
     require "../../conexion.php";
-    session_start();
+    /* session_start();
     if($_SESSION['rol']!=1){
         echo "<script> location.href='../../index.php'; </script>";
     }
     
     if ($conn->connect_error) {
         die("Conección exitosa: " . $conn->connect_error);
-    }
+    } */
 
     $cantidad=$_POST['cantidad'];
     $descripcion=$_POST['descripcion'];
     $valoru=$_POST['valorunitario'];
     $valortotal=$cantidad*$valoru;
+    $proveedor=$_POST['proveedor'];
 
-    $sql="INSERT INTO tblInsumo_Repuesto (Cantidad, Descripcion, Vlr_Unitario, Vlr_Total) VALUES ('$cantidad', '$descripcion', '$valoru', '$valortotal')";
+    $sql="INSERT INTO tblInsumo_Repuesto (Cantidad, Descripcion, Vlr_Unitario, Vlr_Total, Id_Proveedor) VALUES ('$cantidad', '$descripcion', '$valoru', '$valortotal', '$proveedor')";
     if ($conn->query($sql) === FALSE) {
         echo "<script> 	location.href='form_Insumo.php?msg=2'; </script>";
     } else {

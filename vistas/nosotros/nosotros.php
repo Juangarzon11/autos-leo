@@ -69,7 +69,7 @@
                         <img src="../../img/nosotros.svg" alt="">
                     </div>
                     <h3>¿Quiénes somos?</h3>
-                    <p>AUTOS LEO  ofrece servicios de mantenimiento preventivo y correctivo de vehículos, basado en la objetividad y profesionalismo de sus empleados y de la tecnología utilizada, primando la ética, honestidad y responsabilidad del trabajo realizado, buscando la satisfacción de nuestros clientes proveedores y el crecimiento de nuestra organización como una gran fuente de ingreso de su propietario, atravesar de un mejoramiento continuo de sus procesos .</p>
+                    <p>AUTOS LEO  ofrece servicios de mantenimiento preventivo y correctivo de vehículos, basado en la objetividad y profesionalismo de sus empleados y de la tecnología utilizada, primando la ética, honestidad y responsabilidad del trabajo realizado, buscando la satisfacción de nuestros clientes proveedores y el crecimiento de nuestra organización como una gran fuente de ingreso de su propietario, a través de un mejoramiento continuo de sus procesos .</p>
                 </div>
                 <div class="tarjetas p-md-3 col-12 col-md-4">
                     <div class="tar-img">

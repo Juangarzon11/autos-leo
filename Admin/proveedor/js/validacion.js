@@ -15,7 +15,7 @@ $(function(){
                             title: 'Error',
                             text: 'No ha ingresado el correo',
                             });
-                            $('#valorunitario').focus().addClass("is-invalid");
+                            $('#corr').focus().addClass("is-invalid");
                             }
                         }else{
                         Swal.fire({
@@ -23,7 +23,7 @@ $(function(){
                         title: 'Error',
                         text: 'No ha ingresado el telefono',
                         });
-                        $('#valorunitario').focus().addClass("is-invalid");
+                        $('#tel').focus().addClass("is-invalid");
                         }
                     }else{
                     Swal.fire({
@@ -31,7 +31,7 @@ $(function(){
                     title: 'Error',
                     text: 'No ha ingresado la direccion',
                     });
-                    $('#valorunitario').focus().addClass("is-invalid");
+                    $('#direccion').focus().addClass("is-invalid");
                     }
     
                 }else{
@@ -49,7 +49,7 @@ $(function(){
                 title: 'Error',
                 text: 'No ha ingresado la el nombre',
                 });
-                $('#cantidad').focus().addClass("is-invalid");
+                $('#nombre').focus().addClass("is-invalid");
             }
 
         }else {
@@ -58,7 +58,7 @@ $(function(){
             title: 'Error',
             text: 'No ha ingresado la identificación',
             });
-            $('#cantidad').focus().addClass("is-invalid");
+            $('#id').focus().addClass("is-invalid");
         }
 
     });

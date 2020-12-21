@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <!-- Styles -->
-        <link rel="stylesheet" href="../../css/estilos.css">
+        <link rel="stylesheet" href="../../css/estilo.css">
         <!-- Ionic icons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
@@ -44,11 +44,8 @@
                                 Formularios
                             </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
-                        <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero hora</button></a>
-                        <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero mes</button></a>
-                        <a href="../parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios parqueadero</button></a>
-                        <a href="../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
+                        <a href="../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
+                        <a href="form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
@@ -97,100 +94,41 @@
                 <table class="table table-hover">
                     <thead class="thead">
                         <th>Id</th>
-                        <th>Cantidad</th>
-                        <th>Descripción</th>
-                        <th>Valor Unitario</th>
-                        <th>Valor Total</th>
-                        <th></th>
-                        <th></th>
+                        <th>Nombre</th>
+                        <th>Descripcion</th>
+                        <th>Direccion</th>
+                        <th>Telefono</th>
+                        <th>Correo</th>
                         <th></th>
                     </thead>
                     <?php 
-                        $sel = $conn ->query("SELECT * FROM tblInsumo_Repuesto ");
+                        $sel = $conn ->query("SELECT * FROM tblproveedores ");
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
                             $cont++;
                         ?>
                     <tr>
                         <td>
-                            <?php echo $fila['Id_Insumo'] ?>
+                            <?php echo $fila['Id_Proveedor'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Cantidad'] ?>
+                            <?php echo $fila['Nombre'] ?>
                         </td>
                         <td>
                             <?php echo $fila['Descripcion'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Vlr_Unitario'] ?>
+                            <?php echo $fila['Direccion'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Vlr_Total'] ?>
+                            <?php echo $fila['Telefono'] ?>
                         </td>
-                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
-                        <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal2<?php echo $cont; ?>" id="ingresar">Agregar Insumo</button></td>
+                        <td>
+                            <?php echo $fila['Correo'] ?>
+                        </td>
+                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Proveedor']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
 
                     </tr>
-                    <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Salida del Insumo</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                </div>
-                                <div class="modal-body">
-
-
-                                    <form action="restar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
-                                        <label>Código:</label>
-                                        <input type="text" class="form-control" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
-                                        <label>Nombre Producto:</label>
-                                        <input type="text" class="form-control" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
-                                        <label>cantidad vendida:</label>
-                                        <input type="text" class="form-control" name="cantidad">
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="modal" tabindex="-1" role="dialog" id="modal2<?php echo $cont; ?>">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Agregar Insumo</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                        </button>
-                                </div>
-                                <div class="modal-body">
-
-
-                                    <form action="sumar_insumo.php?Id_Insumo=<?php echo $fila['Id_Insumo']?>" method="post">
-                                        <label>Código:</label>
-                                        <input type="text" class="form-control" name="codigo" value="<?php echo $fila['Id_Insumo'] ?>" disabled>
-                                        <label>Nombre Producto:</label>
-                                        <input type="text" class="form-control" name="nombre" value="<?php echo $fila['Descripcion'] ?>" disabled>
-                                        <label>Cantidad a agregar:</label>
-                                        <input type="text" class="form-control" name="cantidad">
-                                        <div class="modal-footer">
-                                            <button type="submit" class="btn btn-primary">Guardar</button>
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-                                        </div>
-                                    </form>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
                     <?php } ?>
                 </table>
             </div>
@@ -217,7 +155,7 @@
                 if (resultado.value) {
                     // Hicieron click en "Sí"
                     //console.log("*se elimina la venta*");
-                    window.location.href="eliminar_insumo.php?Id_Insumo="+id
+                    window.location.href="eliminar_proveedor.php?Id_Proveedor="+id
                 } else {
                     // Dijeron que no
                     console.log("*NO se elimina*");
@@ -234,7 +172,7 @@
         ?>
 
         <script>
-            Swal.fire('Insumo ingresado correctamente')
+            Swal.fire('Proveedor ingresado correctamente')
         </script>
 
         <?php
@@ -243,7 +181,7 @@
         ?>
 
         <script>
-            Swal.fire('No se ha podido ingresar el insumo')
+            Swal.fire('No se ha podido ingresar el proveedor')
         </script>
 
         <?php
@@ -252,7 +190,7 @@
         ?>
 
         <script>
-            Swal.fire('Salida del insumo hecha correctamente')
+            Swal.fire('Salida del proveedor hecha correctamente')
         </script>
 
         <?php
@@ -261,7 +199,7 @@
         ?>
 
         <script>
-            Swal.fire('Error en la salida del insumo')
+            Swal.fire('Error en la salida del proveedor')
         </script>
 
         <?php
@@ -270,7 +208,7 @@
         ?>
 
         <script>
-            Swal.fire('Insumo eliminado correctamente')
+            Swal.fire('Proveedor eliminado correctamente')
         </script>
 
 
@@ -280,7 +218,7 @@
         ?>
 
         <script>
-            Swal.fire('Hubo un error al eliminar el insumo')
+            Swal.fire('Hubo un error al eliminar el proveedor')
         </script>
 
         <?php
@@ -289,7 +227,7 @@
         ?>
 
         <script>
-            Swal.fire('Insumo agregado correctamente')
+            Swal.fire('Proveedor agregado correctamente')
         </script>
 
         <?php
@@ -298,7 +236,7 @@
         ?>
 
         <script>
-            Swal.fire('Hubo un error al agregar el insumo')
+            Swal.fire('Hubo un error al agregar el proveedor')
         </script>
 
 

@@ -1,11 +1,11 @@
 <?php
 
 require  "../../conexion.php";
-session_start();
+/* session_start();
 if($_SESSION['rol']!=1){
     echo "<script> location.href='../../index.php'; </script>";
 }
-
+ */
 $Id_Insumo= $_GET['Id_Insumo'];
 $cantidad= $_POST['cantidad'];
 

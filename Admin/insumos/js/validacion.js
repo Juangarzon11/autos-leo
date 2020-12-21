@@ -5,7 +5,16 @@ $(function(){
         if($('#cantidad').val() != ""){
             if($('#descripcion').val() != ""){
                 if($('#valorunitario').val() != ""){
-                    formulario.submit();
+                    if($('#proveedor').val() != "0"){
+                        formulario.submit();
+                    }else{
+                    Swal.fire({
+                    icon: 'warning',
+                    title: 'Error',
+                    text: 'No ha seleccionado un proveedor',
+                    });
+                    $('#proveedor').focus().addClass("is-invalid");
+                    }
                 }else{
                 Swal.fire({
                 icon: 'warning',
@@ -13,7 +22,7 @@ $(function(){
                 text: 'No ha ingresado el valor del producto',
                 });
                 $('#valorunitario').focus().addClass("is-invalid");
-            }
+                }
 
             }else{
                 Swal.fire({

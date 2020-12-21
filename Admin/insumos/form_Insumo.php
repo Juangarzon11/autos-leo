@@ -1,7 +1,7 @@
 <?php
     include '../../conexion.php';
 
-    session_start();
+    /* session_start();
     if (!isset($_SESSION['rol'])){
         echo "<script> location.href='../../index.php'; </script>";
 
@@ -9,7 +9,7 @@
         if($_SESSION['rol']!=1){
             echo "<script> location.href='../../index.php'; </script>";
         }
-    }
+    } */
     
 ?>
 
@@ -23,7 +23,7 @@
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
         <!-- Styles -->
-        <link rel="stylesheet" href="../../css/estilos.css">
+        <link rel="stylesheet" href="../../css/estilo.css">
         <!-- Ionic icons -->
         <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 
@@ -41,14 +41,11 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-nav">
                 <div class="col-12 btn-group btn-block text-center">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                                Formularios
-                            </button>
+                        Formularios
+                    </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                         <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="../parqueadero/parqueadero-hra/form-parqueadero-hra.php"><button class="dropdown-item" type="button">Parqueadero hora</button></a>
-                        <a href="../parqueadero/parqueadero-mes/form-parqueadero-mes.php"><button class="dropdown-item" type="button">Parqueadero mes</button></a>
-                        <a href="../parqueadero/precios/precios.php"><button class="dropdown-item" type="button">Precios parqueadero</button></a>
-                        <a href="../servicios/form_servicios.php"><button class="dropdown-item" type="button">Servicios</button></a>
+                        <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
@@ -76,7 +73,20 @@
                     <label>Valor Unitario</label>
                     <input type="text" class="form-control" id="valorunitario" name="valorunitario" placeholder="Valor Unitario">
                 </div>
-
+                <div class="form-group">
+                    <label>Proveedor</label>
+                    <select class="form-control" name="proveedor" id="proveedor">
+                        <option value="0" selected>-Seleccionar-</option>
+                        <?php
+                            $sel = $conn->query("SELECT * FROM tblproveedores");
+                            while($fila=$sel->fetch_assoc()){
+                        ?>
+                            <option value="<?php echo $fila['Id_Proveedor'] ?>"><?php echo $fila['Nombre'] ?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
+                </div>
                 <div class="form-group text-center mb-5">
                     <button type="button" class="btn btn-color">Registrar</button>
                 </div>
