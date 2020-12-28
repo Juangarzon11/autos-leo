@@ -22,6 +22,22 @@ h3 {
 
 /* Utilidades */
 
+.btn-color {
+    background-color: #FD0404;
+    color: #ffffff;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.3rem 2rem;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+
+.btn-color:hover {
+    cursor: pointer;
+    background-color: #1A1A1A;
+    color: #ffffff;
+}
+
 .btn-invi {
     background-color: rgba(0, 0, 0, 0);
     color: #FD0404;
@@ -30,10 +46,13 @@ h3 {
     border-radius: 0.5rem;
 }
 
+<<<<<<< HEAD
 .contenedor {
     margin: 0;
     padding: 0;
 }
+=======
+>>>>>>> 620ebc502159f945e9854ad09ed75e49842e2963
 
 
 /* Index */
@@ -81,7 +100,29 @@ nav a:hover {
     color: #ffffff;
 }
 
+/* Tarjetas conocenos */
 
+<<<<<<< HEAD
+=======
+.tar-img {
+    padding: 3rem 3rem 1rem 3rem;
+}
+
+.tarjetas h3 {
+    font-weight: 900;
+    text-align: center;
+    color: #1A1A1A;
+    font-size: 1.8rem;
+    margin-top: 0.5rem;
+}
+
+.tarjetas p {
+    text-align: justify;
+    font-size: 0.8;
+}
+
+
+>>>>>>> 620ebc502159f945e9854ad09ed75e49842e2963
 /* Footer */
 
 .footer {
