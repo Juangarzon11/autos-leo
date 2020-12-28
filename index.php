@@ -1,3 +1,21 @@
+<?php 
+    include "conexion.php";
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        include "vistas/includes/header_idx.php";
+    }else{
+        if($_SESSION['rol'] !=1 ){
+            if($_SESSION['rol'] ==2 ){
+                include 'vistas/includes/header_user.php';
+            }else {
+                include 'vistas/includes/header_idx.php';
+            }
+        }else {
+            include 'vistas/includes/header_admin.php';
+        }            
+    }
+    
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,48 +38,6 @@
 </head>
 
 <body>
-
-    <section class="bg-ind">
-        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-            <div class="col-sm-3 text-center">
-                <a class="navbar-brand" href="index.php">
-                    <img src="img/logo-color.png" alt="" style="width: 80%;">
-                </a>
-            </div>
-
-            <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav hola ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="#">Inicio</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vistas/nosotros/nosotros.php">¿Quienes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="vistas/productos.php">Productos</a>
-                    </li>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                            Perfil
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                            <button class="dropdown-item" type="button">Mi Perfil</button>
-                            <button class="dropdown-item" type="button">Mi Vehículo</button>
-                            <button class="dropdown-item" type="button">Reservas</button>
-                            <a href="vistas/Usuario/form_cliente.php"><button class="dropdown-item" type="button">(Cliente)</button></a>
-                            <a href="vistas/proveedor/form_proveedor.php"><button class="dropdown-item" type="button">(Proveedor)</button></a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sesión</button>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
     <section class="">
     <br>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod accumsan sagittis. Maecenas quam ante, fringilla eu posuere sit amet, porta id libero. Nam eleifend magna venenatis nisl luctus dignissim. Vivamus ornare posuere laoreet. Nullam pharetra volutpat ex vel blandit. Nam rutrum feugiat ante ac sodales. Vestibulum dignissim sapien tellus. Curabitur pulvinar ante augue, eget lacinia ante aliquet quis. In non tristique nibh, nec maximus libero. Nunc a nisi volutpat, mattis quam vitae, sodales enim. Aenean gravida ultrices ligula eget pellentesque.
@@ -71,7 +47,7 @@ Praesent suscipit et neque congue finibus. Pellentesque accumsan accumsan enim m
 Nullam at diam sollicitudin, iaculis sapien nec, blandit est. Nunc orci dolor, porta at lobortis sit amet, lacinia eu ante. Quisque varius ac dolor vel cursus. Phasellus a tortor sodales quam mollis rutrum ut non ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed eget ligula ac felis ullamcorper varius eu eu elit. Aenean non eros ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum iaculis velit quis eleifend congue. Duis accumsan finibus tortor eget tempus. Sed volutpat aliquet mi et rhoncus. Curabitur egestas commodo mi, ut pretium turpis. Integer sit amet viverra turpis, id egestas tellus. Donec quis placerat ligula. Nulla pharetra elit nibh. In finibus, justo aliquam blandit pellentesque, enim tortor vestibulum magna, eu venenatis massa lacus ut mauris.
 
 Pellentesque facilisis viverra dui, quis egestas dolor tristique sed. Pellentesque congue posuere lectus tristique feugiat. Vivamus molestie blandit est a efficitur. Duis facilisis scelerisque turpis, ultrices posuere nunc sagittis in. Vivamus eros mi, bibendum vel scelerisque non, luctus a risus. Sed sed sapien dapibus, accumsan lectus sed, ultricies metus. Pellentesque nec nisl dapibus massa varius suscipit. Maecenas et commodo dui. Fusce cursus augue odio, at mattis diam egestas quis. </p>
-         <br>
+        <br>
     </section>
 
     <footer class="footer py-4 ">
