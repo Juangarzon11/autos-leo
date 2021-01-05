@@ -12,10 +12,9 @@
     $cantidad=$_POST['cantidad'];
     $descripcion=$_POST['descripcion'];
     $valoru=$_POST['valorunitario'];
-    $valortotal=$cantidad*$valoru;
     $proveedor=$_POST['proveedor'];
 
-    $sql="INSERT INTO tblInsumo_Repuesto (Cantidad, Descripcion, Vlr_Unitario, Vlr_Total, Id_Proveedor) VALUES ('$cantidad', '$descripcion', '$valoru', '$valortotal', '$proveedor')";
+    $sql="INSERT INTO tblInsumo_Repuesto (Cantidad, Descripcion, Vlr_Unitario, Id_Proveedor) VALUES ('$cantidad', '$descripcion', '$valoru', '$proveedor')";
     if ($conn->query($sql) === FALSE) {
         echo "<script> 	location.href='form_Insumo.php?msg=2'; </script>";
     } else {

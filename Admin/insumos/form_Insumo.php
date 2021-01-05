@@ -99,7 +99,6 @@
                         <th>Cantidad</th>
                         <th>Descripción</th>
                         <th>Valor Unitario</th>
-                        <th>Valor Total</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -122,9 +121,6 @@
                         </td>
                         <td>
                             <?php echo $fila['Vlr_Unitario'] ?>
-                        </td>
-                        <td>
-                            <?php echo $fila['Vlr_Total'] ?>
                         </td>
                         <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>
