@@ -15,12 +15,10 @@
 </head>
 
 <body>
-
-    <section class="bg-ind">
         <nav class="navbar navbar-expand-lg navbar-light bg-nav">
             <div class="col-sm-3 text-center">
-                <a class="navbar-brand" href="index.php">
-                    <img src="img/logo-color.png" alt="">
+                <a class="navbar-brand" href="<?php echo $URL; ?>">
+                    <img src="<?php echo $URL; ?>img/logo-color.png" alt="">
                 </a>
             </div>
 
@@ -46,13 +44,12 @@
                             <button class="dropdown-item" type="button">Mi Perfil</button>
                             <button class="dropdown-item" type="button">Mi Vehículo</button>
                             <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button"><a href="../login/cerrar_sesion.php">Cerrar Sesión</a></button>
+                            <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                         </div>
                     </div>
                 </ul>
             </div>
         </nav>
-    </section>
 </body>
 
 </html>
