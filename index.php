@@ -38,6 +38,7 @@
 </head>
 
 <body>
+    <section class="bg-ind"></section>
     <section class="">
     <br>
         <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod accumsan sagittis. Maecenas quam ante, fringilla eu posuere sit amet, porta id libero. Nam eleifend magna venenatis nisl luctus dignissim. Vivamus ornare posuere laoreet. Nullam pharetra volutpat ex vel blandit. Nam rutrum feugiat ante ac sodales. Vestibulum dignissim sapien tellus. Curabitur pulvinar ante augue, eget lacinia ante aliquet quis. In non tristique nibh, nec maximus libero. Nunc a nisi volutpat, mattis quam vitae, sodales enim. Aenean gravida ultrices ligula eget pellentesque.

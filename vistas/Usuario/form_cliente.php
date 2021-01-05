@@ -27,46 +27,6 @@ include '../../conexion.php';
 </head>
 
 <body>
-<section class="bg-nav">
-        <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-            <div class="col-sm-3 text-center">
-                <a class="navbar-brand" href="../../">
-                    <img src="../../img/logo-color.png" alt="">
-                </a>
-            </div>
-            <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav hola ml-auto">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="../../">Inicio</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">¿Quienes somos?</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Productos</a>
-                    </li>
-                    <div class="btn-group">
-                        <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                            Perfil
-                        </button>
-                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                            <button class="dropdown-item" type="button">Mi Perfil</button>
-                            <button class="dropdown-item" type="button">Mi Vehículo</button>
-                            <button class="dropdown-item" type="button">Reservas</button>
-                            <a href="#"><button class="dropdown-item" type="button">(Cliente)</button></a>
-                            <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">(Proveedor)</button></a>
-                            <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sesión</button>
-                        </div>
-                    </div>
-                </ul>
-            </div>
-        </nav>
-    </section>
-
         <div class="container mt-3">
             <form action="ingresar_cliente.php" name="add_form" method="POST" class="col-12">
 
@@ -140,7 +100,7 @@ include '../../conexion.php';
                 </div>
 
                 <div class="col-12 text-center mb-4">
-                    <a href="">¿Ya tienes cuenta?</a>
+                    <a href="../login/login.php">¿Ya tienes cuenta?</a>
                 </div>
 
             </form>
