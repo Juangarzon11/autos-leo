@@ -23,6 +23,8 @@ include '../../conexion.php';
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
+    <link rel="stylesheet" href="../../css/estilo.css">
+
 </head>
 
 <body class="bg-login">
@@ -31,9 +33,10 @@ include '../../conexion.php';
 
         <div class="container m-0 p-0 col-12">
 
-            <div class="col-12 col-md-6 col-lg-6 bg-formulario">
+            <div class="col-12 col-md-6 col-lg-6  bg-formulario">
                 <form action="ingresar_login.php" method="post">
-                    <div class="logo text-center col-12">
+                    <div class=" text-center col-12 mb-5">
+                        <img src="../../img/logo-blan.png" alt="">
                     </div>
 
                     <div class="form-row">

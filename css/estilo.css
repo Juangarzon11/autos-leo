@@ -23,7 +23,7 @@ h3 {
 /* Utilidades */
 
 .btn-color {
-    background-color: #FD0404;
+    background-color: #1A1A1A;
     color: #ffffff;
     border: none;
     font-size: 1.3rem;
@@ -34,7 +34,7 @@ h3 {
 
 .btn-color:hover {
     cursor: pointer;
-    background-color: #1A1A1A;
+    background-color: #3d3d3d;
     color: #ffffff;
 }
 
@@ -46,13 +46,15 @@ h3 {
     border-radius: 0.5rem;
 }
 
-<<<<<<< HEAD
 .contenedor {
     margin: 0;
     padding: 0;
 }
-=======
->>>>>>> 620ebc502159f945e9854ad09ed75e49842e2963
+
+.aa a {
+    text-decoration: none;
+    color: #fff;
+}
 
 
 /* Index */
@@ -100,29 +102,10 @@ nav a:hover {
     color: #ffffff;
 }
 
+
 /* Tarjetas conocenos */
 
-<<<<<<< HEAD
-=======
-.tar-img {
-    padding: 3rem 3rem 1rem 3rem;
-}
 
-.tarjetas h3 {
-    font-weight: 900;
-    text-align: center;
-    color: #1A1A1A;
-    font-size: 1.8rem;
-    margin-top: 0.5rem;
-}
-
-.tarjetas p {
-    text-align: justify;
-    font-size: 0.8;
-}
-
-
->>>>>>> 620ebc502159f945e9854ad09ed75e49842e2963
 /* Footer */
 
 .footer {
@@ -150,4 +133,49 @@ nav a:hover {
 .redes i:hover {
     color: #FD0404;
     font-size: 1.8rem;
+}
+
+
+/* Productos */
+
+.precio-productos {
+    color: #FD0404;
+}
+
+
+/* Login */
+
+.bg-login {
+    background-image: radial-gradient(circle at 79% 30%, rgba(230, 230, 230, 0.04) 0%, rgba(230, 230, 230, 0.04) 50%, rgba(12, 12, 12, 0.04) 50%, rgba(12, 12, 12, 0.04) 100%), radial-gradient(circle at 53% 89%, rgba(210, 210, 210, 0.04) 0%, rgba(210, 210, 210, 0.04) 50%, rgba(24, 24, 24, 0.04) 50%, rgba(24, 24, 24, 0.04) 100%), radial-gradient(circle at 92% 89%, rgba(17, 17, 17, 0.04) 0%, rgba(17, 17, 17, 0.04) 50%, rgba(205, 205, 205, 0.04) 50%, rgba(205, 205, 205, 0.04) 100%), radial-gradient(circle at 21% 13%, rgba(124, 124, 124, 0.04) 0%, rgba(124, 124, 124, 0.04) 50%, rgba(243, 243, 243, 0.04) 50%, rgba(243, 243, 243, 0.04) 100%), radial-gradient(circle at 77% 0%, rgba(16, 16, 16, 0.04) 0%, rgba(16, 16, 16, 0.04) 50%, rgba(130, 130, 130, 0.04) 50%, rgba(130, 130, 130, 0.04) 100%), linear-gradient(320deg, rgb(26, 26, 26), rgb(253, 4, 4));
+    ;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.bg-formulario {
+    background-color: rgba(255, 255, 255, 0.563);
+    min-height: 100vh;
+    padding: 5rem;
+}
+
+
+/* .bg-formulario img {
+    width: 90%;
+    margin-bottom: 3rem;
+} */
+
+.bg-formulario label {
+    color: #fff;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0);
+    border: 0;
+    border-bottom: 1.5px solid #ffffff;
+    width: 100%;
+    height: 40%;
+    padding: 0.5rem;
+    outline: none;
 }
