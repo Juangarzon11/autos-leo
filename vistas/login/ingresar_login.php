@@ -15,7 +15,7 @@
         if($row[4]==1){
             $_SESSION['Correo']=$row[1];
             $_SESSION['rol']=$row[4];
-            echo "<script> location.href='../../Admin/insumos/ingresar_insumo.php'; </script>";
+            echo "<script> location.href='../../Admin/insumos/form_insumo.php'; </script>";
         }
     }else{
         echo "<script> location.href='login.php?msg=2'; </script>";
