@@ -36,7 +36,7 @@ include '../../conexion.php';
             <div class="col-12 col-md-6 col-lg-6  bg-formulario">
                 <form action="ingresar_login.php" method="post">
                     <div class=" text-center col-12 mb-5">
-                        <img src="../../img/logo-blan.png" alt="">
+                        <a href="../../index.php"><img src="../../img/logo-blan.png" alt=""></a>
                     </div>
 
                     <div class="form-row">
