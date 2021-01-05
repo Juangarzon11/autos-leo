@@ -46,7 +46,7 @@
                             <button class="dropdown-item" type="button">Mi Perfil</button>
                             <button class="dropdown-item" type="button">Mi Vehículo</button>
                             <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                            <button class="dropdown-item" type="button"><a href="../login/cerrar_sesion.php">Cerrar Sesión</a></button>
                         </div>
                     </div>
                 </ul>

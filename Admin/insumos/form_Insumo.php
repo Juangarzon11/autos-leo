@@ -47,7 +47,7 @@
                         <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
+                        <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
                 </div>
                 </ul>

@@ -42,7 +42,7 @@
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                             <button class="dropdown-item" type="button">Panel Admin</button>
                             <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                            <button class="dropdown-item" type="button"><a href="../login/cerrar_sesion.php">Cerrar Sesión</a></button>
                         </div>
                     </div>
                 </ul>

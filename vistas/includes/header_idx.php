@@ -43,7 +43,7 @@
                             <button class="dropdown-item" type="button">Iniciar sesión</button>
                             <a href="<?php echo $URL; ?>vistas/Usuario/form_cliente.php"><button class="dropdown-item" type="button">Registrarse</button></a>
                             <div class="dropdown-divider"></div>
-                            <button class="dropdown-item" type="button">Cerrar Sesión</button>
+                            <button class="dropdown-item" type="button"><a href="../login/cerrar_sesion.php">Cerrar Sesión</a></button>
                         </div>
                     </div>
                 </ul>
