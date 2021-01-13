@@ -15,8 +15,10 @@
     $direccion=$_POST['direccion'];
     $tel=$_POST['tel'];
     $corr=$_POST['corr'];
+    $lat=$_POST['lat'];
+    $long=$_POST['long'];
 
-    $sql="INSERT INTO tblproveedores (Id_Proveedor, Nombre, Descripcion, Direccion, Telefono, Correo) VALUES ('$id', '$nombre', '$direccion', '$direccion', '$tel', '$corr')";
+    $sql="INSERT INTO tblproveedores (Id_Proveedor, Nombre, Descripcion, Direccion, Telefono, Correo, Latitud, Longitud) VALUES ('$id', '$nombre', '$descripcion', '$direccion', '$tel', '$corr', '$lat', '$long')";
     if ($conn->query($sql) === FALSE) {
         echo "Error: " . $sql . "<br>". $conn->error;
         /* echo "<script> 	location.href='form_proveedor.php?msg=2'; </script>"; */

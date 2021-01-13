@@ -62,7 +62,7 @@
             <form action="ingresar_proveedor.php" name="add_form" method="post">
                 <div class="form-group">
                     <label>Identificacion</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Nombre del proveedor">
+                    <input type="text" class="form-control" id="id" name="id" placeholder="Identificacion (NIT o CC)">
                 </div>
                 <div class="form-group">
                     <label>Nombre</label>
@@ -82,7 +82,15 @@
                 </div>
                 <div class="form-group">
                     <label>Correo</label>
-                    <input type="text" class="form-control" id="corr" name="corr" placeholder="Correo del proveedor">
+                    <input type="email" class="form-control" id="corr" name="corr" placeholder="Correo del proveedor">
+                </div>
+                <div class="form-group">
+                    <label>Latitud</label>
+                    <input type="text" class="form-control" id="lat" name="lat" placeholder="Latitud de la ubicación del proveedor">
+                </div>
+                <div class="form-group">
+                    <label>Longitud</label>
+                    <input type="text" class="form-control" id="long" name="long" placeholder="Longitud de la ubicación del proveedor">
                 </div>
 
                 <div class="form-group text-center mb-5">
@@ -99,6 +107,8 @@
                         <th>Direccion</th>
                         <th>Telefono</th>
                         <th>Correo</th>
+                        <th>Latitud</th>
+                        <th>Longitud</th>
                         <th></th>
                     </thead>
                     <?php 
@@ -126,6 +136,12 @@
                         <td>
                             <?php echo $fila['Correo'] ?>
                         </td>
+                        <td>
+                            <?php echo $fila['Latitud'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['Longitud'] ?>
+                        </td>
                         <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Proveedor']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
 
                     </tr>
@@ -144,8 +160,8 @@
         function preguntar(id){
         Swal
             .fire({
-                title: "¿Eliminar insumo?",
-                text: "¿Estas seguro de eliminar el insumo?",
+                title: "¿Eliminar proveedor?",
+                text: "Esta acción es irreversible y eliminaria los insumos relacionados a este ¿Estas seguro de eliminar el proveedor?",
                 icon: 'error',            
                 showCancelButton: true,
                 confirmButtonText: "Sí, eliminar",

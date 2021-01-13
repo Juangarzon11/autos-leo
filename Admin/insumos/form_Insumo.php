@@ -99,12 +99,15 @@
                         <th>Cantidad</th>
                         <th>Descripción</th>
                         <th>Valor Unitario</th>
+                        <th>Prveedor</th>
                         <th></th>
                         <th></th>
                         <th></th>
                     </thead>
                     <?php 
-                        $sel = $conn ->query("SELECT * FROM tblInsumo_Repuesto ");
+                        $sel = $conn ->query("SELECT `tblinsumo_repuesto`.`Id_Insumo`, `tblinsumo_repuesto`.`Cantidad`, `tblinsumo_repuesto`.`Descripcion`, `tblinsumo_repuesto`.`Vlr_Unitario`, `tblproveedores`.`Nombre`
+                        FROM `tblinsumo_repuesto` 
+                            LEFT JOIN `tblproveedores` ON `tblinsumo_repuesto`.`Id_Proveedor` = `tblproveedores`.`Id_Proveedor`");
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
                             $cont++;
@@ -121,6 +124,9 @@
                         </td>
                         <td>
                             <?php echo $fila['Vlr_Unitario'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila['Nombre'] ?>
                         </td>
                         <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Insumo']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
                         <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal<?php echo $cont; ?>" id="ingresar">Salida Insumo</button></td>

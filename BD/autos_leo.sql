@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-12-2020 a las 11:59:19
+-- Tiempo de generación: 13-01-2021 a las 10:39:06
 -- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.10
+-- Versión de PHP: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -35,6 +35,13 @@ CREATE TABLE `tblcliente` (
   `Cel_Cliente` varchar(50) NOT NULL,
   `Corr_Cliente` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblcliente`
+--
+
+INSERT INTO `tblcliente` (`id_cliente`, `Nom_Cliente`, `Ape_Cliente`, `Dir_Cliente`, `Cel_Cliente`, `Corr_Cliente`) VALUES
+(112244, 'Rosa', 'Meltrozo', NULL, '1111', NULL);
 
 -- --------------------------------------------------------
 
@@ -76,24 +83,15 @@ CREATE TABLE `tblinsumo_repuesto` (
   `Cantidad` int(4) NOT NULL,
   `Descripcion` varchar(200) DEFAULT NULL,
   `Vlr_Unitario` float(8,2) NOT NULL,
-  `Vlr_Total` float(8,2) NOT NULL,
   `Id_Proveedor` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- --------------------------------------------------------
-
 --
--- Estructura de tabla para la tabla `tblporveedores`
+-- Volcado de datos para la tabla `tblinsumo_repuesto`
 --
 
-CREATE TABLE `tblporveedores` (
-  `Id_Proveedor` varchar(20) NOT NULL,
-  `Nombre` varchar(50) NOT NULL,
-  `Descripcion` varchar(50) NOT NULL,
-  `Direccion` varchar(50) NOT NULL,
-  `Telefono` varchar(50) NOT NULL,
-  `Correo` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+INSERT INTO `tblinsumo_repuesto` (`Id_Insumo`, `Cantidad`, `Descripcion`, `Vlr_Unitario`, `Id_Proveedor`) VALUES
+(6, 20, 'rines carro', 100000.00, '88888888');
 
 -- --------------------------------------------------------
 
@@ -106,6 +104,30 @@ CREATE TABLE `tblpreferencias` (
   `Descripcion` varchar(200) DEFAULT NULL,
   `Id_Cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblproveedores`
+--
+
+CREATE TABLE `tblproveedores` (
+  `Id_Proveedor` varchar(20) NOT NULL,
+  `Nombre` varchar(50) NOT NULL,
+  `Descripcion` varchar(50) NOT NULL,
+  `Direccion` varchar(50) NOT NULL,
+  `Telefono` varchar(50) NOT NULL,
+  `Correo` varchar(50) NOT NULL,
+  `Latitud` varchar(20) NOT NULL,
+  `Longitud` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblproveedores`
+--
+
+INSERT INTO `tblproveedores` (`Id_Proveedor`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Correo`, `Latitud`, `Longitud`) VALUES
+('88888888', 'Bloody stream', 'rines carro', 'Cra 32 N 31-23', '3117658672', 'pepe@pepe.com', '55555555', '4444444444');
 
 -- --------------------------------------------------------
 
@@ -131,6 +153,14 @@ CREATE TABLE `tblrol` (
   `Nombre_Rol` varchar(50) NOT NULL,
   `Descripcion` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblrol`
+--
+
+INSERT INTO `tblrol` (`Id_Rol`, `Nombre_Rol`, `Descripcion`) VALUES
+(1, 'Administrador', 'cualquier maricada'),
+(2, 'Usuario', 'Cualquier chimbada');
 
 -- --------------------------------------------------------
 
@@ -174,6 +204,13 @@ CREATE TABLE `tblusuario` (
   `Id_Cliente` int(11) NOT NULL,
   `Id_Rol` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblusuario`
+--
+
+INSERT INTO `tblusuario` (`Id_Usuario`, `Username`, `Password`, `Id_Cliente`, `Id_Rol`) VALUES
+(1, 'rosita123@gmail.com', '123', 112244, 1);
 
 -- --------------------------------------------------------
 
@@ -226,17 +263,17 @@ ALTER TABLE `tblinsumo_repuesto`
   ADD KEY `fk_tblInsumo_Repuesto_tblPorveedores1_idx` (`Id_Proveedor`);
 
 --
--- Indices de la tabla `tblporveedores`
---
-ALTER TABLE `tblporveedores`
-  ADD PRIMARY KEY (`Id_Proveedor`);
-
---
 -- Indices de la tabla `tblpreferencias`
 --
 ALTER TABLE `tblpreferencias`
   ADD PRIMARY KEY (`Id_Preferencia`),
   ADD KEY `fk_tblPreferencias_tblCliente1_idx` (`Id_Cliente`);
+
+--
+-- Indices de la tabla `tblproveedores`
+--
+ALTER TABLE `tblproveedores`
+  ADD PRIMARY KEY (`Id_Proveedor`);
 
 --
 -- Indices de la tabla `tblrecordatorio`
@@ -302,7 +339,7 @@ ALTER TABLE `tbldetalle_pre_factura`
 -- AUTO_INCREMENT de la tabla `tblinsumo_repuesto`
 --
 ALTER TABLE `tblinsumo_repuesto`
-  MODIFY `Id_Insumo` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Insumo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpreferencias`
@@ -320,7 +357,7 @@ ALTER TABLE `tblrecordatorio`
 -- AUTO_INCREMENT de la tabla `tblrol`
 --
 ALTER TABLE `tblrol`
-  MODIFY `Id_Rol` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Rol` int(2) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tblservicios_ofertados`
@@ -338,7 +375,7 @@ ALTER TABLE `tblsolicitud_servicio`
 -- AUTO_INCREMENT de la tabla `tblusuario`
 --
 ALTER TABLE `tblusuario`
-  MODIFY `Id_Rol` int(2) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tblvehiculo`
@@ -369,7 +406,7 @@ ALTER TABLE `tbldetalle_pre_factura`
 -- Filtros para la tabla `tblinsumo_repuesto`
 --
 ALTER TABLE `tblinsumo_repuesto`
-  ADD CONSTRAINT `fk_tblInsumo_Repuesto_tblPorveedores1` FOREIGN KEY (`Id_Proveedor`) REFERENCES `tblporveedores` (`Id_Proveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tblInsumo_Repuesto_tblPorveedores1` FOREIGN KEY (`Id_Proveedor`) REFERENCES `tblproveedores` (`Id_Proveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tblpreferencias`
@@ -387,7 +424,7 @@ ALTER TABLE `tblrecordatorio`
 -- Filtros para la tabla `tblservicios_ofertados`
 --
 ALTER TABLE `tblservicios_ofertados`
-  ADD CONSTRAINT `fk_tblServicios_Ofertados_tblPorveedores1` FOREIGN KEY (`Id_Proveedor`) REFERENCES `tblporveedores` (`Id_Proveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_tblServicios_Ofertados_tblPorveedores1` FOREIGN KEY (`Id_Proveedor`) REFERENCES `tblproveedores` (`Id_Proveedor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Filtros para la tabla `tblsolicitud_servicio`
