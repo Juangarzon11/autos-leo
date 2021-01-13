@@ -60,7 +60,7 @@
             <div class="stinky text-center">
                 <h2>Formulario Proveedor</h2>
             </div>
-            <form action="ingresar_proveedor.php" name="add_form" method="post">
+            <form action="ingresar_proveedor.php" name="add_form" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Identificacion</label>
                     <input type="text" class="form-control" id="id" name="id" placeholder="Identificacion (NIT o CC)">
@@ -72,6 +72,10 @@
                 <div class="form-group">
                     <label>Descripción</label>
                     <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion del proveedor">
+                </div>
+                <div class="form-group">
+                    <label>Imagen</label>
+                    <input type="file" class="input-file" id="img1" name="img1" placeholder="Imagen proveedor">
                 </div>
                 <div class="form-group">
                     <label>Dirección</label>
