@@ -8,7 +8,25 @@ $(function(){
                     if($('#direccion').val() != ""){
                         if($('#tel').val() != ""){
                             if($('#corr').val() != ""){
-                                formulario.submit();
+                                if($('#lat').val() != ""){
+                                    if($('#long').val() != ""){
+                                        formulario.submit();
+                                    }else{
+                                    Swal.fire({
+                                    icon: 'warning',
+                                    title: 'Error',
+                                    text: 'No ha ingresado la longitud',
+                                    });
+                                    $('#corr').focus().addClass("is-invalid");
+                                    }
+                                }else{
+                                Swal.fire({
+                                icon: 'warning',
+                                title: 'Error',
+                                text: 'No ha ingresado la latitud',
+                                });
+                                $('#corr').focus().addClass("is-invalid");
+                                }
                             }else{
                             Swal.fire({
                             icon: 'warning',
