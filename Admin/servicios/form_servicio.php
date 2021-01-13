@@ -32,7 +32,7 @@
         
         <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
-        <title>Formulario Insumos</title>
+        <title>Formulario Servicios</title>
     </head>
 
     <body>
@@ -41,14 +41,14 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-nav">
                 <div class="col-12 btn-group btn-block text-center">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                                Formularios
-                            </button>
+                        Formularios
+                    </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
-                        <a href="../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
-                        <a href="form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
+                        <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
+                        <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <a href="../servicios/form_servicio.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
+                        <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
                 </div>
                 </ul>
@@ -58,44 +58,38 @@
 
         <div class="container formularios col-12 mt-5 p-sm-5">
             <div class="stinky text-center">
-                <h2>Formulario Proveedor</h2>
+                <h2>Formulario Servicios</h2>
             </div>
-            <form action="ingresar_proveedor.php" name="add_form" method="post">
+            <form action="ingresar_servicio.php" name="add_form" method="post">
+
                 <div class="form-group">
-                    <label>Identificacion</label>
-                    <input type="text" class="form-control" id="id" name="id" placeholder="Identificacion (NIT o CC)">
-                </div>
-                <div class="form-group">
-                    <label>Nombre</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Nombre del proveedor">
+                    <label>Tipo de servicio</label>
+                    <input type="text" class="form-control" id="tiposervicio" name="tiposervicio" placeholder="Tipo de servicio">
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion del proveedor">
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion Del Insumo">
                 </div>
                 <div class="form-group">
-                    <label>Dirección</label>
-                    <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion del proveedor">
+                    <label>Valor</label>
+                    <input type="text" class="form-control" id="valor" name="valor" placeholder="Valor">
                 </div>
                 <div class="form-group">
-                    <label>Telefono</label>
-                    <input type="text" class="form-control" id="tel" name="tel" placeholder="Telefono del proveedor">
+                    <label>Proveedor</label>
+                    <select class="form-control" name="proveedor" id="proveedor">
+                        <option value="0" selected>-Seleccionar-</option>
+                        <?php
+                            $sel = $conn->query("SELECT * FROM tblproveedores");
+                            while($fila=$sel->fetch_assoc()){
+                        ?>
+                            <option value="<?php echo $fila['Id_Proveedor'] ?>"><?php echo $fila['Nombre'] ?></option>
+                        <?php
+                            }
+                        ?>
+                    </select>
                 </div>
-                <div class="form-group">
-                    <label>Correo</label>
-                    <input type="email" class="form-control" id="corr" name="corr" placeholder="Correo del proveedor">
-                </div>
-                <div class="form-group">
-                    <label>Latitud</label>
-                    <input type="text" class="form-control" id="lat" name="lat" placeholder="Latitud de la ubicación del proveedor">
-                </div>
-                <div class="form-group">
-                    <label>Longitud</label>
-                    <input type="text" class="form-control" id="long" name="long" placeholder="Longitud de la ubicación del proveedor">
-                </div>
-
                 <div class="form-group text-center mb-5">
-                    <button type="button" class="btn btn-color">Registrar</button>
+                    <button type="submit" class="btn btn-color">Registrar</button>
                 </div>
 
             </form>
@@ -103,47 +97,37 @@
                 <table class="table table-hover">
                     <thead class="thead">
                         <th>Id</th>
-                        <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Direccion</th>
-                        <th>Telefono</th>
-                        <th>Correo</th>
-                        <th>Latitud</th>
-                        <th>Longitud</th>
+                        <th>Tipo de servicio</th>
+                        <th>Descripción</th>
+                        <th>Valor</th>
+                        <th>Proveedor</th>
                         <th></th>
                     </thead>
                     <?php 
-                        $sel = $conn ->query("SELECT * FROM tblproveedores ");
+                        $sel = $conn ->query("SELECT `ser`.`Id_Servicio`, `ser`.`Tipo_Servicio`, `ser`.`Descripcion`, `ser`.`Valor`, `pro`.`Nombre`
+                        FROM `tblservicios_ofertados` AS `ser` 
+                            LEFT JOIN `tblproveedores` AS `pro` ON `ser`.`Id_Proveedor` = `pro`.`Id_Proveedor`;");
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
                             $cont++;
                         ?>
                     <tr>
                         <td>
-                            <?php echo $fila['Id_Proveedor'] ?>
+                            <?php echo $fila['Id_Servicio'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Nombre'] ?>
+                            <?php echo $fila['Tipo_Servicio'] ?>
                         </td>
                         <td>
                             <?php echo $fila['Descripcion'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Direccion'] ?>
+                            <?php echo $fila['Valor'] ?>
                         </td>
                         <td>
-                            <?php echo $fila['Telefono'] ?>
+                            <?php echo $fila['Nombre'] ?>
                         </td>
-                        <td>
-                            <?php echo $fila['Correo'] ?>
-                        </td>
-                        <td>
-                            <?php echo $fila['Latitud'] ?>
-                        </td>
-                        <td>
-                            <?php echo $fila['Longitud'] ?>
-                        </td>
-                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Proveedor']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
+                        <td><a href="#" onclick="preguntar(<?php echo $fila['Id_Servicio']?>)"><button type="button" class="btn btn-primary">ELIMINAR</button></a></td>
 
                     </tr>
                     <?php } ?>
@@ -161,8 +145,8 @@
         function preguntar(id){
         Swal
             .fire({
-                title: "¿Eliminar proveedor?",
-                text: "Esta acción es irreversible y eliminaria los insumos relacionados a este ¿Estas seguro de eliminar el proveedor?",
+                title: "¿Eliminar Servicio?",
+                text: "¿Estas seguro de eliminar el servicio?",
                 icon: 'error',            
                 showCancelButton: true,
                 confirmButtonText: "Sí, eliminar",
@@ -172,7 +156,7 @@
                 if (resultado.value) {
                     // Hicieron click en "Sí"
                     //console.log("*se elimina la venta*");
-                    window.location.href="eliminar_proveedor.php?Id_Proveedor="+id
+                    window.location.href="eliminar_servicio.php?Id_Servicio="+id
                 } else {
                     // Dijeron que no
                     console.log("*NO se elimina*");
@@ -189,7 +173,7 @@
         ?>
 
         <script>
-            Swal.fire('Proveedor ingresado correctamente')
+            Swal.fire('Servicio ingresado correctamente')
         </script>
 
         <?php
@@ -198,25 +182,7 @@
         ?>
 
         <script>
-            Swal.fire('No se ha podido ingresar el proveedor')
-        </script>
-
-        <?php
-                }else{
-                    if($_GET['msg']==3){
-        ?>
-
-        <script>
-            Swal.fire('Salida del proveedor hecha correctamente')
-        </script>
-
-        <?php
-                    }else{
-                        if($_GET['msg']==4){
-        ?>
-
-        <script>
-            Swal.fire('Error en la salida del proveedor')
+            Swal.fire('No se ha podido ingresar el servicio')
         </script>
 
         <?php
@@ -225,7 +191,7 @@
         ?>
 
         <script>
-            Swal.fire('Proveedor eliminado correctamente')
+            Swal.fire('Servicio eliminado correctamente')
         </script>
 
 
@@ -235,33 +201,12 @@
         ?>
 
         <script>
-            Swal.fire('Hubo un error al eliminar el proveedor')
-        </script>
-
-        <?php
-                            }else{
-                                if($_GET['msg']==7){
-        ?>
-
-        <script>
-            Swal.fire('Proveedor agregado correctamente')
-        </script>
-
-        <?php
-                            }else{
-                                if($_GET['msg']==8){
-        ?>
-
-        <script>
-            Swal.fire('Hubo un error al agregar el proveedor')
+            Swal.fire('Hubo un error al eliminar el servicio')
         </script>
 
 
+
         <?php
-                                        }   
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -273,8 +218,6 @@
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 
-        <!--validacion de capos vacios-->
-        <script type="text/javascript" src="js/validacion.js"></script>
     </body>
 
     </html>

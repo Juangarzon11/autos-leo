@@ -46,6 +46,7 @@
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
                         <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
+                        <a href="../servicios/form_servicio.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
                         <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
@@ -99,7 +100,7 @@
                         <th>Cantidad</th>
                         <th>Descripción</th>
                         <th>Valor Unitario</th>
-                        <th>Prveedor</th>
+                        <th>Proveedor</th>
                         <th></th>
                         <th></th>
                         <th></th>
