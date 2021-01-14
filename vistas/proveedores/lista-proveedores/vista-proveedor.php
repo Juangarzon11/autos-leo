@@ -1,3 +1,23 @@
+<?php
+    include "../../../conexion.php";
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        include "../../includes/header_idx.php";
+    }else{
+        if($_SESSION['rol'] !=1 ){
+            if($_SESSION['rol'] ==2 ){
+                include '../../includes/header_user.php';
+            }else {
+                include '../../includes/header_idx.php';
+            }
+        }else {
+            include '../../includes/header_admin.php';
+        }            
+    }
+
+    $sel = $conn->query("SELECT `tblproveedores`.`Id_Proveedor`, `tblproveedores`.`imagen`, `tblproveedores`.`Nombre`, `tblproveedores`.`Descripcion`
+    FROM `tblproveedores`");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -21,65 +41,30 @@
 <body>
 
 <div class="container">
-
-
     <section>
-
         <h1>Proveedores</h1>
-
     </section>
-
 </div>
-    
-    
     <div class="container">
         <div class="row2">
-            
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <?php
+            while($fila=$sel->fetch_assoc()){
+            ?>
+            <div class="card col-auto m-3" style="width: 18rem;">
+                <img class="card-img-top" src="../../../images/<?php echo $fila['imagen']?>" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title text-center"><?php echo $fila['Nombre']?></h3>
+                    <p class="card-text text-justify"><?php echo $fila['Descripcion']?></p>
+                </div>
+                <ul class="list-group list-group-flush text-center precio-productos">
+                    <hr>
+                    <a href="lista-proveedores.php?pro=<?php echo $fila['Id_Proveedor'] ?>"><button class="btn btn-color mb-3 mt-0"> Ver más</button></a>
+                    <!-- <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li> -->
+                </ul>
             </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <hr>
-                <button class="btn btn-color mb-3 mt-0"> Ver más</button>
-                <!-- <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li> -->
-            </ul>
-        </div>
-
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
-        </div>
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
-        </div>
-
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
-        </div>
-
+            <?php
+            }
+            ?>
         </div>
     </div>
 

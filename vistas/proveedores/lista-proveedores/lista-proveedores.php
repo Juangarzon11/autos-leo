@@ -1,3 +1,26 @@
+<?php
+    include "../../../conexion.php";
+    session_start();
+    if(!isset($_SESSION['rol'])){
+        include "../../includes/header_idx.php";
+    }else{
+        if($_SESSION['rol'] !=1 ){
+            if($_SESSION['rol'] ==2 ){
+                include '../../includes/header_user.php';
+            }else {
+                include '../../includes/header_idx.php';
+            }
+        }else {
+            include '../../includes/header_admin.php';
+        }            
+    }
+    $sel = $conn->query("SELECT * FROM tblproveedores WHERE Id_Proveedor = $_GET[pro]");
+    $fila=$sel->fetch_assoc();
+
+    $sel2 = $conn->query("SELECT * FROM tblinsumo_repuesto WHERE Id_Proveedor = $_GET[pro]");
+
+    $sel3 = $conn->query("SELECT * FROM tblservicios_ofertados WHERE Id_Proveedor = $_GET[pro]");
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -24,51 +47,59 @@
     
 
     <section class="bg-proveedor mb-3">
-        <img src="../../../img/bg-01.jpg" alt="">
-        <h1> nom. provee</h1>
+        <img src="../../../images/<?php echo $fila['imagen']?>" alt="">
+        <h1> <?php echo $fila['Nombre']?></h1>
     </section>
 
 </div>
-    
-    
     <div class="container">
         <h2>Productos</h2>
         <div class="row2">
-        
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <?php
+            while($fila2=$sel2->fetch_assoc()){
+            ?>
+            <div class="card col-auto m-3" style="width: 18rem;">
+                <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h3 class="card-title text-center"><?php echo $fila2['Descripcion']?></h3>
+                </div>
+                <ul class="list-group list-group-flush text-center precio-productos">
+                    <li class="list-group-item"><i class="fas fa-tag"></i> $<?php echo $fila2['Vlr_Unitario']?></li>
+                </ul>
             </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
+            <?php
+            }
+            ?>
         </div>
+    </div>
 
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
-        </div>
-
-        <div class="card col-auto m-3" style="width: 18rem;">
-            <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
-            <div class="card-body">
-                <h3 class="card-title text-center">Card title</h3>
-                <p class="card-text text-justify">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-            <ul class="list-group list-group-flush text-center precio-productos">
-                <li class="list-group-item"><i class="fas fa-tag"></i> $4.000</li>
-            </ul>
-        </div>
-
-
+    <div class="container">
+        <h2>Servicios</h2>
+        <div class="row2">
+        <table class="table table-hover">
+                    <thead class="thead">
+                        <th>Tipo de servicio</th>
+                        <th>Descripción</th>
+                        <th>Valor</th>
+                    </thead>
+                    <?php
+                        $cont=0;
+                        while ($fila3 = $sel3 -> fetch_assoc()) {
+                            $cont++;
+                        ?>
+                    <tr>
+                        <td>
+                            <?php echo $fila3['Tipo_Servicio'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila3['Descripcion'] ?>
+                        </td>
+                        <td>
+                            <?php echo $fila3['Valor'] ?>
+                        </td>
+                    </tr>
+                    <?php } ?>
+                </table>
         </div>
     </div>
 
