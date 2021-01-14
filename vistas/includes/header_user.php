@@ -31,6 +31,9 @@
                         <a class="nav-link" href="<?php echo $URL; ?>">Inicio</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $URL; ?>vistas/proveedores/lista-proveedores/vista-proveedor.php">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $URL; ?>vistas/nosotros/nosotros.php">¿Quienes somos?</a>
                     </li>
                     <li class="nav-item">

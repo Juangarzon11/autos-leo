@@ -31,6 +31,9 @@
                         <a class="nav-link" href="<?php echo $URL; ?>">Inicio</span></a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="<?php echo $URL; ?>vistas/proveedores/lista-proveedores/vista-proveedor.php">Proveedores</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo $URL; ?>vistas/nosotros/nosotros.php">¿Quienes somos?</a>
                     </li>
                     <div class="btn-group">
@@ -38,7 +41,7 @@
                             Perfil
                         </button>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                            <button class="dropdown-item" type="button">Panel Admin</button>
+                            <a href="<?php echo $URL; ?>/Admin/proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Panel Admin</button></a>
                             <div class="dropdown-divider"></div>
                             <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                         </div>
