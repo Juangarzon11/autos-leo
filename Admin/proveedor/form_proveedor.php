@@ -2,12 +2,11 @@
     include '../../conexion.php';
 
     /* session_start();
-    if (!isset($_SESSION['rol'])){
-        echo "<script> location.href='../../index.php'; </script>";
-
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
     }else{
-        if($_SESSION['rol']!=1){
-            echo "<script> location.href='../../index.php'; </script>";
+        if($_SESSION['rol'] !=1 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
         }
     } */
     
@@ -48,7 +47,7 @@
                         <a href="form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <a href="../servicios/form_servicio.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
-                        <a href="<?php echo $URL; ?>/Cliente/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
+                        <a href="<?php echo $URL; ?>/vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
                 </div>
                 </ul>
@@ -82,7 +81,7 @@
                     <input type="text" class="form-control" id="direccion" name="direccion" placeholder="Direccion del proveedor">
                 </div>
                 <div class="form-group">
-                    <label>Telefono</label>
+                    <label>Teléfono</label>
                     <input type="text" class="form-control" id="tel" name="tel" placeholder="Telefono del proveedor">
                 </div>
                 <div class="form-group">
@@ -108,16 +107,16 @@
                     <thead class="thead">
                         <th>Id</th>
                         <th>Nombre</th>
-                        <th>Descripcion</th>
-                        <th>Direccion</th>
-                        <th>Telefono</th>
+                        <th>Descripción</th>
+                        <th>Dirección</th>
+                        <th>Teléfono</th>
                         <th>Correo</th>
                         <th>Latitud</th>
                         <th>Longitud</th>
                         <th></th>
                     </thead>
                     <?php 
-                        $sel = $conn ->query("SELECT * FROM tblproveedores ");
+                        $sel = $conn ->query("SELECT * FROM tblproveedores");
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
                             $cont++;
@@ -165,8 +164,8 @@
         function preguntar(id){
         Swal
             .fire({
-                title: "¿Eliminar proveedor?",
-                text: "Esta acción es irreversible y eliminaria los insumos relacionados a este ¿Estas seguro de eliminar el proveedor?",
+                title: "¿Estas seguro de eliminar el proveedor?",
+                text: "Esta acción es irreversible, se eliminan todos los insumos y servicios relacionados a este proveedor ¿Desea eliminarlo?",
                 icon: 'error',            
                 showCancelButton: true,
                 confirmButtonText: "Sí, eliminar",

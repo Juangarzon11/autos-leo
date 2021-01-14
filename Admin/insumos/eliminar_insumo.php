@@ -1,8 +1,12 @@
 <?php
     require  "../../conexion.php";
     session_start();
-    if($_SESSION['rol']!=1){
-        echo "<script> location.href='../../index.php'; </script>";
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
+    }else{
+        if($_SESSION['rol'] !=1 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
+        }
     }
     
     $Id_Insumo= $_GET['Id_Insumo'];

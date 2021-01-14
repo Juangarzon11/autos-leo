@@ -2,12 +2,11 @@
     include '../../conexion.php';
 
     /* session_start();
-    if (!isset($_SESSION['rol'])){
-        echo "<script> location.href='../../index.php'; </script>";
-
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
     }else{
-        if($_SESSION['rol']!=1){
-            echo "<script> location.href='../../index.php'; </script>";
+        if($_SESSION['rol'] !=1 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
         }
     } */
     
@@ -44,7 +43,7 @@
                         Formularios
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-right" size="3">
-                        <a href="form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
+                        <a href="../insumos/form_insumo.php"><button class="dropdown-item" type="button">Insumos</button></a>
                         <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <a href="../servicios/form_servicio.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
@@ -68,7 +67,7 @@
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion Del Insumo">
+                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion del servicio">
                 </div>
                 <div class="form-group">
                     <label>Valor</label>
@@ -89,7 +88,7 @@
                     </select>
                 </div>
                 <div class="form-group text-center mb-5">
-                    <button type="submit" class="btn btn-color">Registrar</button>
+                    <button type="button" class="btn btn-color">Registrar</button>
                 </div>
 
             </form>
@@ -217,6 +216,9 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+
+        <!--validacion de capos vacios-->
+        <script type="text/javascript" src="js/validacion.js"></script>
 
     </body>
 
