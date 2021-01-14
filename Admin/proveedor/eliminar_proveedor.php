@@ -18,6 +18,7 @@
     $del = $conn -> query("DELETE FROM tblproveedores WHERE Id_Proveedor='$Id_Proveedor'");
 
     if ($del) {
+        unlink("../../images/$img");//acá le damos la direccion exacta
         echo "<script> 	location.href='form_proveedor.php?msg=5'; </script>";
     }else{
         echo "Error: " . $del . "<br>". $conn->error;
