@@ -15,6 +15,11 @@ h3 {
     font-weight: 900;
 }
 
+p {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
 .bg-dark {
     background-color: #1A1A1A !important;
 }
@@ -54,6 +59,13 @@ h3 {
 .aa a {
     text-decoration: none;
     color: #fff;
+}
+
+.row2 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    justify-content: center;
 }
 
 
@@ -178,4 +190,29 @@ nav a:hover {
     height: 40%;
     padding: 0.5rem;
     outline: none;
+}
+
+
+/* Proveedores */
+
+.bg-proveedor {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg-proveedor img {
+    filter: opacity(50%);
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30vh;
+    object-fit: cover;
+}
+
+.bg-proveedor h1 {
+    position: absolute;
+    color: #1A1A1A;
 }
