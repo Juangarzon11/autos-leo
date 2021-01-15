@@ -31,7 +31,7 @@
         
         <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
-        <title>Formulario Insumos</title>
+        <title>Formulario Proveedor</title>
     </head>
 
     <body>
