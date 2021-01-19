@@ -15,8 +15,7 @@
         }            
     }
 
-    $sel = $conn->query("SELECT `tblproveedores`.`Id_Proveedor`, `tblproveedores`.`imagen`, `tblproveedores`.`Nombre`, `tblproveedores`.`Descripcion`
-    FROM `tblproveedores`");
+    $sel = $conn->query("SELECT Id_Proveedor, imagen, Nombre, Descripcion FROM tblproveedores");
 ?>
 <!DOCTYPE html>
 <html lang="es">

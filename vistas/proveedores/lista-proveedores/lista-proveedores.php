@@ -53,6 +53,8 @@
 
 </div>
     <div class="container">
+        <div id="map" class="col-12" style="height: 200px;">
+        </div>
         <h2>Productos</h2>
         <div class="row2">
             <?php
@@ -102,6 +104,21 @@
                 </table>
         </div>
     </div>
+
+    <script>
+        function iniciarMap(){
+            var coord = {lat:<?php echo $fila['Latitud'] ?> ,lng: <?php echo $fila['Longitud'] ?>};
+            var map = new google.maps.Map(document.getElementById('map'),{
+            zoom: 10,
+            center: coord
+            });
+            var marker = new google.maps.Marker({
+            position: coord,
+            map: map
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBICNPekXKgpgOgnzsKnyQdrYhj51YG0q0&callback=iniciarMap"></script>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>

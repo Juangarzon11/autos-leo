@@ -1,14 +1,14 @@
 <?php
     include '../../conexion.php';
 
-    /* session_start();
+    session_start();
     if(!isset($_SESSION['rol'])){
         header( 'location:'.$URL.'vistas/login/login.php');
     }else{
         if($_SESSION['rol'] !=1 ){
             header( 'location:'.$URL.'vistas/login/login.php');
         }
-    } */
+    }
     
 ?>
 
@@ -47,6 +47,7 @@
                         <a href="../proveedor/form_proveedor.php"><button class="dropdown-item" type="button">Proveedor</button></a>
                         <a href="../servicios/form_servicio.php"><button class="dropdown-item" type="button">Servicios</button></a>
                         <div class="dropdown-divider"></div>
+                        <a href="<?php echo $URL; ?>"><button class="dropdown-item" type="button">Inicio</button></a>
                         <a href="<?php echo $URL; ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar sesión</button></a>
                     </div>
                 </div>
@@ -67,7 +68,7 @@
                 </div>
                 <div class="form-group">
                     <label>Descripción</label>
-                    <input type="text" class="form-control" id="descripcion" name="descripcion" placeholder="Descripcion del servicio">
+                    <textarea class="form-control" name="descripcion" id="descripcion" rows="5" placeholder="Ingrese una descripcion del servicio"></textarea>
                 </div>
                 <div class="form-group">
                     <label>Valor</label>
