@@ -18,7 +18,7 @@ include '../../conexion.php';
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
-    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
+    <link rel="icon" type="image/png" href="<?php echo $URL;?>img/icon.png">
 
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

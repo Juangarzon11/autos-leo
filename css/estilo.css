@@ -114,6 +114,25 @@ nav a:hover {
     color: #ffffff;
 }
 
+.bg-index {
+    background-image: url(../img/bg-01.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.5s;
+}
+
+.bg-index a {
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #0c0c0c;
+    font-weight: 700;
+}
+
 
 /* Tarjetas conocenos */
 

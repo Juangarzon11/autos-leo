@@ -39,17 +39,21 @@
 
 <body>
     <section class="bg-ind"></section>
-    <section class="">
-    <br>
-        <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin euismod accumsan sagittis. Maecenas quam ante, fringilla eu posuere sit amet, porta id libero. Nam eleifend magna venenatis nisl luctus dignissim. Vivamus ornare posuere laoreet. Nullam pharetra volutpat ex vel blandit. Nam rutrum feugiat ante ac sodales. Vestibulum dignissim sapien tellus. Curabitur pulvinar ante augue, eget lacinia ante aliquet quis. In non tristique nibh, nec maximus libero. Nunc a nisi volutpat, mattis quam vitae, sodales enim. Aenean gravida ultrices ligula eget pellentesque.
 
-Praesent suscipit et neque congue finibus. Pellentesque accumsan accumsan enim mattis elementum. Nulla condimentum neque ex, sed ultrices ex facilisis ac. Pellentesque sodales, lectus vitae laoreet posuere, dui leo venenatis urna, ut blandit urna ante nec ante. Duis ac vulputate lorem. Ut vehicula nunc massa, quis maximus quam eleifend id. Aenean vestibulum arcu urna. Donec hendrerit ex a dolor pellentesque lacinia. Curabitur ante urna, commodo a vulputate in, pulvinar sed est. Cras at ultrices magna, eu pulvinar sapien. Sed mattis eu lorem non condimentum. Mauris vitae metus ligula. Curabitur luctus porta porta. Morbi dictum ipsum sapien, id sollicitudin est auctor non. Aliquam quis nisi eu nulla semper posuere in ultricies velit. Integer porta laoreet hendrerit.
-
-Nullam at diam sollicitudin, iaculis sapien nec, blandit est. Nunc orci dolor, porta at lobortis sit amet, lacinia eu ante. Quisque varius ac dolor vel cursus. Phasellus a tortor sodales quam mollis rutrum ut non ipsum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed eget ligula ac felis ullamcorper varius eu eu elit. Aenean non eros ex. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum iaculis velit quis eleifend congue. Duis accumsan finibus tortor eget tempus. Sed volutpat aliquet mi et rhoncus. Curabitur egestas commodo mi, ut pretium turpis. Integer sit amet viverra turpis, id egestas tellus. Donec quis placerat ligula. Nulla pharetra elit nibh. In finibus, justo aliquam blandit pellentesque, enim tortor vestibulum magna, eu venenatis massa lacus ut mauris.
-
-Pellentesque facilisis viverra dui, quis egestas dolor tristique sed. Pellentesque congue posuere lectus tristique feugiat. Vivamus molestie blandit est a efficitur. Duis facilisis scelerisque turpis, ultrices posuere nunc sagittis in. Vivamus eros mi, bibendum vel scelerisque non, luctus a risus. Sed sed sapien dapibus, accumsan lectus sed, ultricies metus. Pellentesque nec nisl dapibus massa varius suscipit. Maecenas et commodo dui. Fusce cursus augue odio, at mattis diam egestas quis. </p>
-        <br>
-    </section>
+    <section class="mt-5 mb-5">
+            <div class="container text-center">
+                <section class="sect-index">
+                    <div class="bg-index">
+                        <div class="img-titulo text-center">
+                            <a href="vistas/proveedores/lista-proveedores/vista-proveedor.php">
+                                <h1>Proveedores</h1>
+                                <!-- <img src="../../img/logo-03.png" style="width: 40%;"> -->
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
 
     <footer class="footer py-4 ">
         <div class="container">

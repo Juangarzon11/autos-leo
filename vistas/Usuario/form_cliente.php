@@ -22,6 +22,7 @@ include '../../conexion.php';
 
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <link rel="icon" type="image/png" href="<?php echo $URL;?>img/icon.png">
 
     <link rel="stylesheet" href="../../css/estilo.css">
 </head>
