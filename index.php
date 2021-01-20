@@ -55,11 +55,15 @@
             </div>
         </section>
 
+        <section>
+        <div class="col-12 text-center"><iframe php class="vista-video" width="1280" height="720" src="https://www.youtube.com/embed/t3DpuQrBivU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+        </section>
+
     <footer class="footer py-4 ">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-left text-center contac">
-                    <h3 class="contac"><a href="#">Contáctenos</a></h3>
+                    <h3 class="contac"><a href="vistas/contactenos/contacto.php">Contáctenos</a></h3>
                 </div>
                 <div class="col-lg-6 text-lg-center text-center">
                     <a class="navbar-brand" href="index.php">
@@ -67,9 +71,9 @@
                     </a>
                 </div>
                 <div class="col-lg-3 my-3 my-lg-0 text-lg-center text-center">
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
+                    <a class="redes btn btn-social mx-3" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.facebook.com/autosleosas/" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/autosleo/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
