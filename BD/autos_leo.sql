@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-01-2021 a las 10:39:06
+-- Tiempo de generación: 20-01-2021 a las 11:03:54
 -- Versión del servidor: 10.4.14-MariaDB
--- Versión de PHP: 7.4.9
+-- Versión de PHP: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -83,15 +83,17 @@ CREATE TABLE `tblinsumo_repuesto` (
   `Cantidad` int(4) NOT NULL,
   `Descripcion` varchar(200) DEFAULT NULL,
   `Vlr_Unitario` float(8,2) NOT NULL,
-  `Id_Proveedor` varchar(20) NOT NULL
+  `Id_Proveedor` varchar(20) NOT NULL,
+  `imagen` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblinsumo_repuesto`
 --
 
-INSERT INTO `tblinsumo_repuesto` (`Id_Insumo`, `Cantidad`, `Descripcion`, `Vlr_Unitario`, `Id_Proveedor`) VALUES
-(6, 20, 'rines carro', 100000.00, '88888888');
+INSERT INTO `tblinsumo_repuesto` (`Id_Insumo`, `Cantidad`, `Descripcion`, `Vlr_Unitario`, `Id_Proveedor`, `imagen`) VALUES
+(20, 10, 'awedasda', 500.00, '5550123', '20210120105349aurtos.jpg'),
+(21, 10, '85474', 500.00, '5550123', '20210120105713horda.jpg');
 
 -- --------------------------------------------------------
 
@@ -119,15 +121,19 @@ CREATE TABLE `tblproveedores` (
   `Telefono` varchar(50) NOT NULL,
   `Correo` varchar(50) NOT NULL,
   `Latitud` varchar(20) NOT NULL,
-  `Longitud` varchar(20) NOT NULL
+  `Longitud` varchar(20) NOT NULL,
+  `imagen` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `tblproveedores`
 --
 
-INSERT INTO `tblproveedores` (`Id_Proveedor`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Correo`, `Latitud`, `Longitud`) VALUES
-('88888888', 'Bloody stream', 'rines carro', 'Cra 32 N 31-23', '3117658672', 'pepe@pepe.com', '55555555', '4444444444');
+INSERT INTO `tblproveedores` (`Id_Proveedor`, `Nombre`, `Descripcion`, `Direccion`, `Telefono`, `Correo`, `Latitud`, `Longitud`, `imagen`) VALUES
+('550123', 'joselo', 'condone durex', 'Calle 21 #22-17', '124545', 'maurox952@gmail.com', '123456', '654321', '20210113140300icono.png'),
+('5550123', 'Autos la ceja', 'Mecánico 1.0 rin 13 con copas de lujo pantalla tac', 'Calle 21 #22-17', '124545', 'maurox952@gmail.com', '123456', '654321', '20210114163518aurtos.jpg'),
+('55879', 'col4', 'condone durex', 'Calle 21 #22-17', '124545', 'maurox9523@gmail.com', '123456', '654321', '20210113140300icono.png'),
+('88888888', 'Bloody stream', 'rines carro', 'Cra 32 N 31-23', '3117658672', 'pepe@pepe.com', '55555555', '4444444444', '20210113140300icono.png');
 
 -- --------------------------------------------------------
 
@@ -175,6 +181,15 @@ CREATE TABLE `tblservicios_ofertados` (
   `Valor` float(8,2) NOT NULL,
   `Id_Proveedor` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblservicios_ofertados`
+--
+
+INSERT INTO `tblservicios_ofertados` (`Id_Servicio`, `Tipo_Servicio`, `Descripcion`, `Valor`, `Id_Proveedor`) VALUES
+(1, 'electrico', 'rapracion de luces y esas vainas', 150000.00, '5550123'),
+(2, 'mecanico', 'cambio de cilindro', 800000.00, '5550123'),
+(3, 'mantenimiento', 'cambio de pastas', 500000.00, '5550123');
 
 -- --------------------------------------------------------
 
@@ -339,7 +354,7 @@ ALTER TABLE `tbldetalle_pre_factura`
 -- AUTO_INCREMENT de la tabla `tblinsumo_repuesto`
 --
 ALTER TABLE `tblinsumo_repuesto`
-  MODIFY `Id_Insumo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `Id_Insumo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpreferencias`
@@ -363,7 +378,7 @@ ALTER TABLE `tblrol`
 -- AUTO_INCREMENT de la tabla `tblservicios_ofertados`
 --
 ALTER TABLE `tblservicios_ofertados`
-  MODIFY `Id_Servicio` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Servicio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tblsolicitud_servicio`
