@@ -61,7 +61,7 @@
             while($fila2=$sel2->fetch_assoc()){
             ?>
             <div class="card col-auto m-3" style="width: 18rem;">
-                <img class="card-img-top" src="../../../img/bg-01.jpg" alt="Card image cap">
+                <img class="card-img-top" src="../../../images/<?php echo $fila2['imagen']?>" alt="Card image cap">
                 <div class="card-body">
                     <h3 class="card-title text-center"><?php echo $fila2['Descripcion']?></h3>
                 </div>

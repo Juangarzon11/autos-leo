@@ -60,7 +60,7 @@
             <div class="stinky text-center">
                 <h2>Formulario Insumos</h2>
             </div>
-            <form action="ingresar_insumo.php" name="add_form" method="post">
+            <form action="ingresar_insumo.php" name="add_form" method="post" enctype="multipart/form-data">
 
                 <div class="form-group">
                     <label>Cantidad</label>
@@ -69,6 +69,9 @@
                 <div class="form-group">
                     <label>Descripción</label>
                     <textarea class="form-control" name="descripcion" id="descripcion" rows="5" placeholder="Ingrese una descripcion del insumo"></textarea>
+                </div>
+                <div class="form-group">
+                    <input type="file" name="imagen" id="imagen" class="input-file" required>
                 </div>
                 <div class="form-group">
                     <label>Valor Unitario</label>
@@ -89,7 +92,7 @@
                     </select>
                 </div>
                 <div class="form-group text-center mb-5">
-                    <button type="button" class="btn btn-color">Registrar</button>
+                    <button type="submit" class="btn btn-color">Registrar</button>
                 </div>
 
             </form>
