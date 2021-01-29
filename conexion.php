@@ -1,7 +1,7 @@
 <?php
     //Todos
 $conn = new mysqli('localhost','root','','autos_leo');
-$URL = "http://localhost/autos-leo/";
+$URL = "http://localhost/GIT/autos-leo/";
 
     //El otro
 // $conn = new mysqli('localhost','root','','autos_leo','33065');

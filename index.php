@@ -71,7 +71,7 @@
                     </a>
                 </div>
                 <div class="col-lg-3 my-3 my-lg-0 text-lg-center text-center">
-                    <a class="redes btn btn-social mx-3" href=""><i class="fab fa-twitter"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://api.whatsapp.com/message/B7UGDS35RZSUH1" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a class="redes btn btn-social mx-3" href="https://www.facebook.com/autosleosas/" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="redes btn btn-social mx-3" href="https://www.instagram.com/autosleo/" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>

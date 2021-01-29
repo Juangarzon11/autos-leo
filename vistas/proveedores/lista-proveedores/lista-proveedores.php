@@ -105,6 +105,38 @@
         </div>
     </div>
 
+    <div class="contacto container text-center">
+        <div class="row">
+            <h1>Contacto</h1>
+        </div>
+        <div class="row">
+        <?php
+        if ($fila['pagina'] != ""){
+        ?>
+            <div class="col-md-4 col-sm-12">
+                <h2><a href="<?php echo $fila['pagina']?>" target="_blank"><i class="fas fa-globe"></i><?php echo $fila['pagina']?></a></h2>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h2><a href="https://api.whatsapp.com/send/?phone=57<?php echo $fila['whatsapp']?>&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+<?php echo $fila['Nombre']?>&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i><?php echo $fila['whatsapp']?></a></h2>
+            </div>
+            <div class="col-md-4 col-sm-12">
+                <h2><i class="fas fa-phone-alt"></i><?php echo $fila['Telefono']?></h2>
+            </div>
+        <?php
+        }else{
+        ?>
+            <div class="col-md-6 col-sm-12">
+                <h2><a href="https://api.whatsapp.com/send/?phone=57<?php echo $fila['whatsapp']?>&text=Hola%21+Me+interesa+conocer+m%C3%A1s+sobre+<?php echo $fila['Nombre']?>&app_absent=0" target="_blank"><i class="fab fa-whatsapp"></i><?php echo $fila['whatsapp']?></a></h2>
+            </div>
+            <div class="col-md-6 col-sm-12">
+                <h2><i class="fas fa-phone-alt"></i><?php echo $fila['Telefono']?></h2>
+            </div>
+        <?php
+        }
+        ?>
+        </div>
+    </div>
+
     <script>
         function iniciarMap(){
             var coord = {lat:<?php echo $fila['Latitud'] ?> ,lng: <?php echo $fila['Longitud'] ?>};
