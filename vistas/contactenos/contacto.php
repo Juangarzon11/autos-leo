@@ -6,7 +6,7 @@
             include '../includes/header_idx.php';
         }else{
             if($_SESSION['rol'] ==1 ){
-                include '../includes/header_admin';
+                include '../includes/header_admin.php';
             }else{
                 if($_SESSION['rol'] ==2 ){
                     include '../includes/header_user.php';
