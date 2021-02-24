@@ -156,6 +156,23 @@ nav a:hover {
     text-decoration: none;
 }
 
+.copy {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.copy__img {
+    width: 60%;
+}
+
+@media (min-width: 991px) {
+    .copy__img {
+        width: 70%;
+    }
+}
+
 .redes i {
     color: #fff;
     font-size: 1.5rem;
