@@ -75,7 +75,8 @@
                 </div>
                 <div class="col-lg-6 text-lg-center text-center copy">
                 <div class="copy__img">
-                            <img src="img/logo-tecno.png" alt="">
+                <h5>Apoyado por:</h5>
+                            <img src="../../../img/logo-tecno.png" alt="">
                         </div>
                         <div class="copy__texto">
                             ©Autos Leo

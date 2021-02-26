@@ -80,12 +80,17 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-left text-center contac">
-                    <h3 class="contac"><a href="#">Contáctenos</a></h3>
+                    <h3 class="contac"><a href="<?php echo $URL ?>vistas/contactenos/contacto.php">Contáctenos</a></h3>
                 </div>
-                <div class="col-lg-6 text-lg-center text-center">
-                    <a class="navbar-brand" href="index.php">
-                        <img src="../../img/logo-blan.png" alt="">
-                    </a>
+                <div class="col-lg-6 text-lg-center text-center copy">
+                <div class="copy__img">
+                <h5>Apoyado por:</h5>
+                            <img src="../../img/logo-tecno.png" alt="">
+                        </div>
+                        <div class="copy__texto">
+                            ©Autos Leo
+                            <?php echo date('Y'); ?>
+                        </div>
                 </div>
                 <div class="col-lg-3 my-3 my-lg-0 text-lg-center text-center">
                     <a class="redes btn btn-social mx-3" href="https://api.whatsapp.com/message/B7UGDS35RZSUH1" target="_blank"><i class="fab fa-whatsapp"></i></a>
